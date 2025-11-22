@@ -2,7 +2,7 @@
   "wines": [
     {
       "form_number": "1",
-      "title": "Prosecco DOC Treviso Frizzante (Spago)",
+      "title": "Prosecco DOC Treviso Spumante Brut Wit",
       "category": "Bubbles",
       "url": "https://vinifratelliranft.be/shop/bubbels_4/veneto_44/prosecco-doc_45/prosecco-doc-treviso-frizzante-spago/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/prosecco_doc_treviso_frizzante_spago_3206.jpg",
@@ -13,7 +13,7 @@
     },
     {
       "form_number": "2",
-      "title": "Prosecco DOC Treviso Spumante Brut Rosé millesimato",
+      "title": "Prosecco DOC Treviso Spumante Brut Rosé",
       "category": "Bubbles",
       "url": "https://vinifratelliranft.be/shop/bubbels_4/prosecco-doc-treviso-spumante-brut-rose-millesimato/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/11/prosecco_doc_treviso_spumante_brut_ros_millesimato_5206.png",
@@ -21,26 +21,26 @@
       "price": "€11"
     },
     {
-      "title": "Saporito Chardonnay | Garganega Veneto IGT",
+      "title": "'Saporito' Chardonnay | Garganega Veneto IGT",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/veneto_46/saporito-chardonnay-garganega-veneto-igt/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/09/saporito_chardonnay__garganega_veneto_igt_4722.jpg",
       "desc": "Met zijn soepele & sappige karakter is dit een ideale borrel- & terraswijn. De veelzijdige Chardonnay zorgt voor een mooie fruitige basis & de nodige structuur. De Garganega zorgt voor de soepele & ronde tonen. Licht, verfrissend & verrassend lekker.",
       "pair_with": "Groente, Schaal- & schelpdieren, Vis",
-      "price": "€11"
+      "price": "€7.50"
     },
     {
       "form_number": "3",
-      "title": "Pinot Grigio Venezia DOC (Savian)",
+      "title": "Pinot Grigio Venezia DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/veneto_46/venezia-doc_86/pinot-grigio-venezia-doc-savian/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/pinot_grigio_venezia_doc_savian_3341.png",
-      "desc": "Pinot Grigio from Venezia",
-      "price": "€11"
+      "desc": "Pinot Grigio from Venezia (Savian)",
+      "price": "€10"
     },
     {
       "form_number": "4",
-      "title": "Piemonte Sauvignon 'Tra donne Sole' DOC 0,75 lt. (Vite Colte)",
+      "title": "Piemonte sauvignon 'Tra Donne Sole' DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/rose-wijn_31/piemonte_32/piemonte-sauvignon-tra-donne-sole-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/05/piemonte_sauvignon_tra_donne_sole_doc_075_lt__vite_colte_3312.jpg",
@@ -53,27 +53,27 @@
     },
     {
       "form_number": "5",
-      "title": "Coste della Sesia Bianco 'La Via' DOC",
+      "title": " Coste Della Sesia Bianco 'La Via' DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/piemonte_10/coste-della-sesia-doc_30/coste-della-sesia-bianco-la-via-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/coste_della_sesia_bianco_la_via_doc_5743.png",
       "desc": "Strogele kleur. Karakteristiek, fijn & intens in de neus, in de afdronk droog & harmonieus.",
       "grapes": "100% Erbaluce",
       "pair_with": "Ideale begeleider als aperitief, gaat ook goed samen met een antipasti misto (bordje koude vleeswaren & kaas), bij een primi gaan we de combinatie aan met iets van vis of een frisse salade met geitenkaas of een caprese (salade van tomaat & mozzarella).",
-      "price": "€11"
+      "price": "€14"
     },
     {
       "form_number": "6",
-      "title": "Saporito Merlot 'Raboso' Veneto IGT",
+      "title": "'Saporito' Merlot | Raboso Veneto IGT",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/veneto_50/saporito-merlot-raboso-veneto-igt/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/09/saporito_merlot__raboso_veneto_igt_4706.jpg",
       "desc": "Een diepe, paarsrode wijn die wordt gekenmerkt door aroma's van rijpe bosvruchten zoals bosbessen, kersen & braambessen. Het is een gulle rode wijn met een aangename finish. Een combinatie van Merlot & Raboso uit Veneto. Die laatste wordt vaak gebruikt in Prosecco & geeft vooral veel indrukken van fruit af aan de wijn. Veneto kent een zacht klimaat met natte winters. De druiven krijgen er de tijd om zich langzaam te ontwikkelen. Dat uit zich in wijnen met een zacht & soepel karakter.",
-      "price": "€11"
+      "price": "€7.50"
     },
     {
       "form_number": "7",
-      "title": "Barbera d'Asti 'San Nicolao' DOCG (Vite Colte)",
+      "title": "Barbera D'Asti 'San Nicolao' DOCG",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/piemonte_13/asti-docg_54/barbera-dasti-san-nicolao-docg/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/05/barbera_dasti_san_nicolao_docg_vite_colte_4320-150x150.png",
@@ -88,16 +88,16 @@
     },
     {
       "form_number": "8",
-      "title": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC",
+      "title": "Bonarda dell'Oltrepò Pavese DOC",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/lombardije_68/oltrep-pavese-doc_69/oltrepo-pavese-bonarda-mazzolino-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/oltrep_pavese_bonarda_mazzolino_-_doc_1534.jpg",
-      "desc": "Bonarda from Oltrepò Pavese",
-      "price": "€11"
+      "desc": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC",
+      "price": "€14"
     },
     {
       "form_number": "9",
-      "title": "Langhe Nebbiolo 'Sogni al Campo' DOC (Vite Colte)",
+      "title": "Langhe Nebbiolo “Sogni al Campo” DOC",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/piemonte_13/langhe_18/langhe-nebbiolo-sogni-al-campo-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/05/langhe_nebbiolo_sogni_al_campo_doc_vite_colte_2123_2-150x150.jpg",
