@@ -56,6 +56,25 @@
 				padding-bottom: 1rem;
 				border-bottom: 2px solid #ddd;
 			}
+			
+			/* Price badge */
+			.tiles article {
+				position: relative;
+			}
+			.price-badge {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				background: rgba(255, 255, 255, 0.95);
+				color: #333;
+				padding: 8px 16px;
+				border-radius: 20px;
+				font-weight: bold;
+				font-size: 1.1em;
+				z-index: 10;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+				backdrop-filter: blur(10px);
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -197,11 +216,13 @@
 								
 								winesByCategory[category].forEach(function(wine, index) {
 									const style = styles[index % styles.length];
+									const priceBadge = wine.price ? `<span class="price-badge">${wine.price}</span>` : '';
 									const wineElement = `
 										<article class="${style}">
 											<span class="image">
 												<img src="${wine.image}" alt="${wine.title}" />
 											</span>
+											${priceBadge}
 											<a href="${wine.url}" target="_blank">
 												<h2>${wine.title}</h2>
 												<div class="content">
