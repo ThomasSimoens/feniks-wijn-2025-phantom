@@ -10,8 +10,9 @@ No need for any "buy" or "shopping cart" functionality, because Feniks chose to 
 ## Recommendations
 
 1. Support three languages; "Nederlands" (default), "English" and "Francais" 
-1. Show the wines per category; "Bubbels", "Witte Wijn" and "Rode Wijn"
-1. Wine images should all be shown consistently, all at the same size (as the original size and aspect ration can differ)
+2. Show the wines per category; "Bubbels", "Witte Wijn" and "Rode Wijn"
+3. Wine images should all be shown consistently, all at the same size (as the original size and aspect ration can differ)
+4. Even though we have individual URLs for all the wines, don't actually use them (because we want to actually guide them toward the Google Form where they can order to support the club)
 
 ## Local setup
 

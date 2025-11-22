@@ -11,8 +11,66 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Consistent wine image sizing */
+			.tiles article .image {
+				height: 300px;
+				overflow: hidden;
+			}
+			.tiles article .image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+			
+			/* Language switcher */
+			.language-switcher {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 1000;
+				background: rgba(255, 255, 255, 0.95);
+				padding: 10px;
+				border-radius: 5px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			.language-switcher button {
+				background: none;
+				border: 1px solid #ddd;
+				padding: 5px 10px;
+				margin: 0 2px;
+				cursor: pointer;
+				border-radius: 3px;
+			}
+			.language-switcher button:hover {
+				background: #f0f0f0;
+			}
+			.language-switcher button.active {
+				background: #333;
+				color: #fff;
+				border-color: #333;
+			}
+			
+			/* Category sections */
+			.category-section {
+				margin-bottom: 3rem;
+			}
+			.category-section h2 {
+				margin-bottom: 2rem;
+				padding-bottom: 1rem;
+				border-bottom: 2px solid #ddd;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
+		<!-- Language Switcher -->
+		<div class="language-switcher">
+			<button data-lang="nl" class="active">NL</button>
+			<button data-lang="en">EN</button>
+			<button data-lang="fr">FR</button>
+		</div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -20,12 +78,12 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Feniks Wijn 2025</h1>
-								<p>Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Wijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.</p>
+								<h1 data-translate="title">Feniks Wijn 2025</h1>
+								<p data-translate="description">Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Wijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.</p>
 							</header>
-							<section class="tiles" id="wines-container">
-								<!-- Wines will be loaded here dynamically -->
-							</section>
+							<div id="wines-container">
+								<!-- Wines will be loaded here dynamically by category -->
+							</div>
 						</div>
 					</div>
 
@@ -33,12 +91,11 @@
 					<footer id="footer">
 						<div class="inner">
 							<section id="order-form">
-								<h2>Bestelformulier</h2>
-								<p>Gebruik het onderstaande formulier om uw bestelling te plaatsen:</p>
+								<h2 data-translate="orderFormTitle">Bestelformulier</h2>
+								<p data-translate="orderFormDescription">Gebruik het onderstaande formulier om uw bestelling te plaatsen:</p>
 								<ul class="actions">
-									<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank" class="button primary">Open Bestelformulier</a></li>
+									<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank" class="button primary" data-translate="openOrderForm">Open Bestelformulier</a></li>
 								</ul>
-								<p><small>Let op: Vervang de bovenstaande link met de URL van uw Google Sheet formulier.</small></p>
 							</section>
 							<ul class="copyright">
 								<li>&copy; Feniks Wijnaarde. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -55,33 +112,135 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				// Translations
+				const translations = {
+					nl: {
+						title: 'Feniks Wijn 2025',
+						description: 'Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Wijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.',
+						orderFormTitle: 'Bestelformulier',
+						orderFormDescription: 'Gebruik het onderstaande formulier om uw bestelling te plaatsen:',
+						openOrderForm: 'Open Bestelformulier',
+						categories: {
+							'Bubbles': 'Bubbels',
+							'White': 'Witte Wijn',
+							'Red': 'Rode Wijn'
+						},
+						error: 'Er is een fout opgetreden bij het laden van de wijnen.'
+					},
+					en: {
+						title: 'Feniks Wine 2025',
+						description: 'Discover our selection of wines for the benefit of basketball club Feniks Wijnaarde. Click on a wine for more information or use the order form to place your order.',
+						orderFormTitle: 'Order Form',
+						orderFormDescription: 'Use the form below to place your order:',
+						openOrderForm: 'Open Order Form',
+						categories: {
+							'Bubbles': 'Bubbles',
+							'White': 'White Wine',
+							'Red': 'Red Wine'
+						},
+						error: 'An error occurred while loading the wines.'
+					},
+					fr: {
+						title: 'Feniks Vin 2025',
+						description: 'Découvrez notre sélection de vins au profit du club de basket Feniks Wijnaarde. Cliquez sur un vin pour plus d\'informations ou utilisez le formulaire de commande pour passer votre commande.',
+						orderFormTitle: 'Formulaire de commande',
+						orderFormDescription: 'Utilisez le formulaire ci-dessous pour passer votre commande:',
+						openOrderForm: 'Ouvrir le formulaire de commande',
+						categories: {
+							'Bubbles': 'Bulles',
+							'White': 'Vin blanc',
+							'Red': 'Vin rouge'
+						},
+						error: 'Une erreur s\'est produite lors du chargement des vins.'
+					}
+				};
+
+				// Category mapping
+				const categoryOrder = ['Bubbles', 'White', 'Red'];
+
+				// Current language (default: nl)
+				let currentLang = localStorage.getItem('feniks-wijn-lang') || 'nl';
+
+				// Apply translations
+				function applyTranslations(lang) {
+					const t = translations[lang];
+					$('[data-translate]').each(function() {
+						const key = $(this).data('translate');
+						if (t[key]) {
+							$(this).text(t[key]);
+						}
+					});
+					// Update active language button
+					$('.language-switcher button').removeClass('active');
+					$('.language-switcher button[data-lang="' + lang + '"]').addClass('active');
+				}
+
 				// Load and display wines
-				$(document).ready(function() {
+				function loadWines() {
 					$.getJSON('feniks-data/wines.json', function(data) {
 						const wines = data.wines;
 						const styles = ['style1', 'style2', 'style3', 'style4', 'style5', 'style6'];
 						const container = $('#wines-container');
-						
-						wines.forEach(function(wine, index) {
-							const style = styles[index % styles.length];
-							const wineElement = `
-								<article class="${style}">
-									<span class="image">
-										<img src="${wine.image}" alt="${wine.title}" />
-									</span>
-									<a href="${wine.url}" target="_blank">
-										<h2>${wine.title}</h2>
-										<div class="content">
-											<p><strong>${wine.category}</strong><br />${wine.desc}</p>
-										</div>
-									</a>
-								</article>
-							`;
-							container.append(wineElement);
+						container.empty();
+
+						// Group wines by category
+						const winesByCategory = {};
+						wines.forEach(function(wine) {
+							if (!winesByCategory[wine.category]) {
+								winesByCategory[wine.category] = [];
+							}
+							winesByCategory[wine.category].push(wine);
+						});
+
+						// Display wines by category in order
+						categoryOrder.forEach(function(category) {
+							if (winesByCategory[category] && winesByCategory[category].length > 0) {
+								const categorySection = $('<div class="category-section"></div>');
+								const categoryTitle = $('<h2></h2>').text(translations[currentLang].categories[category]);
+								categorySection.append(categoryTitle);
+								
+								const tilesSection = $('<section class="tiles"></section>');
+								
+								winesByCategory[category].forEach(function(wine, index) {
+									const style = styles[index % styles.length];
+									const wineElement = `
+										<article class="${style}">
+											<span class="image">
+												<img src="${wine.image}" alt="${wine.title}" />
+											</span>
+											<a href="${wine.url}" target="_blank">
+												<h2>${wine.title}</h2>
+												<div class="content">
+													<p><strong>${translations[currentLang].categories[wine.category]}</strong><br />${wine.desc}</p>
+												</div>
+											</a>
+										</article>
+									`;
+									tilesSection.append(wineElement);
+								});
+								
+								categorySection.append(tilesSection);
+								container.append(categorySection);
+							}
 						});
 					}).fail(function() {
-						$('#wines-container').html('<p>Er is een fout opgetreden bij het laden van de wijnen.</p>');
+						$('#wines-container').html('<p>' + translations[currentLang].error + '</p>');
 					});
+				}
+
+				// Language switcher
+				$(document).on('click', '.language-switcher button', function() {
+					const lang = $(this).data('lang');
+					currentLang = lang;
+					localStorage.setItem('feniks-wijn-lang', lang);
+					applyTranslations(lang);
+					loadWines(); // Reload wines to update category names
+				});
+
+				// Initialize
+				$(document).ready(function() {
+					applyTranslations(currentLang);
+					loadWines();
 				});
 			</script>
 
