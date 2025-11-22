@@ -256,18 +256,22 @@
       }
 
       /* Wine detail expandable section */
-      .wine-detail-section {
-        display: none;
+      .wine-detail-container {
+        grid-column: 1 / -1;
         background: #f8f8f8;
-        padding: 1.5rem;
+        padding: 0;
         border-radius: 4px;
         margin-top: 1rem;
         margin-left: 1em;
         margin-right: 1em;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
       }
 
-      .wine-detail-section.active {
-        display: block;
+      .wine-detail-container.active {
+        padding: 1.5rem;
+        max-height: 1000px;
       }
 
       .wine-detail-header {
@@ -568,6 +572,14 @@
 
               const tilesSection = $('<section class="tiles"></section>');
 
+              // Store detail HTML for each wine in this category
+              if (!window.wineDetails) {
+                window.wineDetails = {};
+              }
+              if (!window.wineDetails[category]) {
+                window.wineDetails[category] = {};
+              }
+
               winesByCategory[category].forEach(function (wine, index) {
                 const style = styles[index % styles.length];
                 const priceBadge = wine.price
@@ -576,8 +588,11 @@
 
                 // Build detail sections HTML
                 let detailHtml = `
-                  <div class="wine-detail-header">
-                    <div class="wine-detail-title">${wine.title}</div>
+                  <div class="wine-detail-subsection">
+                    <div class="wine-detail-subsection-title">Description</div>
+                    <div class="wine-detail-subsection-content">${
+                      wine.desc || ""
+                    }</div>
                   </div>
                 `;
 
@@ -586,15 +601,6 @@
                     <div class="wine-detail-subsection">
                       <div class="wine-detail-subsection-title">Flavour Profile</div>
                       <div class="wine-detail-subsection-content">${wine.flavour}</div>
-                    </div>
-                  `;
-                }
-
-                if (wine.desc) {
-                  detailHtml += `
-                    <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Description</div>
-                      <div class="wine-detail-subsection-content">${wine.desc}</div>
                     </div>
                   `;
                 }
@@ -645,8 +651,10 @@
                 }
 
                 const wineId = wine.form_number || index;
+                window.wineDetails[category][wineId] = detailHtml;
+
                 const wineElement = `
-                  <article class="${style}" data-wine-id="${wineId}">
+                  <article class="${style}" data-wine-id="${wineId}" data-category="${category}">
                     <span class="image">
                       <img src="${wine.image}" alt="${wine.title}" />
                     </span>
@@ -662,13 +670,13 @@
                   </article>
                 `;
                 tilesSection.append(wineElement);
-
-                // Add detail section after the article
-                const detailSection = $(
-                  `<div class="wine-detail-section" data-wine-id="${wineId}">${detailHtml}</div>`
-                );
-                tilesSection.append(detailSection);
               });
+
+              // Add a single detail container for this category
+              const detailContainer = $(
+                `<div class="wine-detail-container" data-category="${category}"></div>`
+              );
+              tilesSection.append(detailContainer);
 
               categorySection.append(tilesSection);
               container.append(categorySection);
@@ -686,17 +694,34 @@
 
       // Toggle wine detail display
       function toggleWineDetail(wineId) {
-        const detailSection = $(
-          `[data-wine-id="${wineId}"].wine-detail-section`
+        const wineArticle = $(`[data-wine-id="${wineId}"]`);
+        const category = wineArticle.data("category");
+        const detailContainer = $(
+          `.wine-detail-container[data-category="${category}"]`
         );
 
-        // Close any other open sections
-        $(
-          `.wine-detail-section.active:not([data-wine-id="${wineId}"])`
-        ).removeClass("active");
+        // Get the stored details
+        const details = window.wineDetails[category];
 
-        // Toggle current section
-        detailSection.toggleClass("active");
+        // If clicking the same wine, toggle it off
+        if (detailContainer.data("current-wine") === wineId) {
+          detailContainer.removeClass("active");
+          detailContainer.data("current-wine", null);
+          detailContainer.empty();
+        } else {
+          // Show details for the clicked wine
+          const detailHtml = `
+            <div class="wine-detail-header">
+              <div class="wine-detail-title">${wineArticle
+                .find("h2")
+                .text()}</div>
+            </div>
+            ${details[wineId]}
+          `;
+          detailContainer.html(detailHtml);
+          detailContainer.addClass("active");
+          detailContainer.data("current-wine", wineId);
+        }
       }
 
       // Attach click handlers to wine tiles
