@@ -57,6 +57,31 @@
 				border-bottom: 2px solid #ddd;
 			}
 			
+			/* Wine tiles - 4 columns on wider screens */
+			.tiles article {
+				width: calc(25% - 2.5em) !important;
+			}
+			@media screen and (max-width: 1280px) {
+				.tiles article {
+					width: calc(33.33333% - 1.25em) !important;
+				}
+			}
+			@media screen and (max-width: 980px) {
+				.tiles article {
+					width: calc(50% - 2.5em) !important;
+				}
+			}
+			@media screen and (max-width: 736px) {
+				.tiles article {
+					width: calc(50% - 1.25em) !important;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.tiles article {
+					width: 100% !important;
+				}
+			}
+			
 			/* Price badge */
 			.tiles article {
 				position: relative;
