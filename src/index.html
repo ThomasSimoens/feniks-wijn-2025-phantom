@@ -75,6 +75,109 @@
 				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 				backdrop-filter: blur(10px);
 			}
+			
+			/* Quick overview section */
+			.quick-overview {
+				margin-bottom: 3rem;
+				padding: 2rem;
+				background: #f8f8f8;
+				border-radius: 8px;
+			}
+			.quick-overview h2 {
+				margin-bottom: 1.5rem;
+			}
+			.overview-category-group {
+				margin-bottom: 1.5rem;
+				position: relative;
+			}
+			.overview-category-group:first-child {
+				margin-top: 0;
+			}
+			.overview-category-group:not(:first-child) {
+				margin-top: 1.5rem;
+				padding-top: 2rem;
+			}
+			.overview-category-group:not(:first-child)::before {
+				content: '';
+				position: absolute;
+				top: 1.5rem;
+				left: 0;
+				right: 0;
+				height: 1px;
+				background: linear-gradient(to right, transparent, #ddd 20%, #ddd 80%, transparent);
+			}
+			.overview-category-title {
+				font-size: 0.85em;
+				font-weight: 500;
+				margin-bottom: 0.75rem;
+				margin-top: 0;
+				color: #888;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				position: relative;
+			}
+			.overview-category-group:not(:first-child) .overview-category-title {
+				margin-top: -2rem;
+				margin-bottom: 1rem;
+			}
+			.overview-list {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1rem;
+			}
+			@media screen and (max-width: 1280px) {
+				.overview-list {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+			@media screen and (max-width: 980px) {
+				.overview-list {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+			@media screen and (max-width: 736px) {
+				.overview-list {
+					grid-template-columns: 1fr;
+				}
+			}
+			.overview-item {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0.75rem 1rem;
+				background: white;
+				border-radius: 4px;
+				border-left: 3px solid #ddd;
+			}
+			.overview-item.bubbles {
+				border-left-color: #7ecaf6;
+			}
+			.overview-item.white {
+				border-left-color: #7bd0c1;
+			}
+			.overview-item.red {
+				border-left-color: #f2849e;
+			}
+			.overview-item-info {
+				flex: 1;
+			}
+			.overview-item-category {
+				font-size: 0.85em;
+				color: #666;
+				text-transform: uppercase;
+				margin-bottom: 0.25rem;
+			}
+			.overview-item-name {
+				font-weight: 500;
+				color: #333;
+			}
+			.overview-item-price {
+				font-weight: bold;
+				color: #333;
+				margin-left: 1rem;
+				white-space: nowrap;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -94,6 +197,9 @@
 								<h1 data-translate="title">Feniks Wijn 2025</h1>
 								<p data-translate="description">Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Zwijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.</p>
 							</header>
+							<div id="quick-overview-container">
+								<!-- Quick overview will be loaded here dynamically -->
+							</div>
 							<div id="wines-container">
 								<!-- Wines will be loaded here dynamically by category -->
 							</div>
@@ -133,6 +239,7 @@
 						orderFormTitle: 'Bestelformulier',
 						orderFormDescription: 'Gebruik het onderstaande formulier om uw bestelling te plaatsen:',
 						openOrderForm: 'Open Bestelformulier',
+						quickOverviewTitle: 'Overzicht',
 						categories: {
 							'Bubbles': 'Bubbels',
 							'White': 'Witte Wijn',
@@ -146,6 +253,7 @@
 						orderFormTitle: 'Order Form',
 						orderFormDescription: 'Use the form below to place your order:',
 						openOrderForm: 'Open Order Form',
+						quickOverviewTitle: 'Overview',
 						categories: {
 							'Bubbles': 'Bubbles',
 							'White': 'White Wine',
@@ -159,6 +267,7 @@
 						orderFormTitle: 'Formulaire de commande',
 						orderFormDescription: 'Utilisez le formulaire ci-dessous pour passer votre commande:',
 						openOrderForm: 'Ouvrir le formulaire de commande',
+						quickOverviewTitle: 'Aperçu',
 						categories: {
 							'Bubbles': 'Bulles',
 							'White': 'Vin blanc',
@@ -193,6 +302,51 @@
 					$.getJSON('feniks-data/wines.json', function(data) {
 						const wines = data.wines;
 						const styles = ['style1', 'style2', 'style3', 'style4', 'style5', 'style6'];
+						
+						// Load quick overview
+						const overviewContainer = $('#quick-overview-container');
+						overviewContainer.empty();
+						const overviewSection = $('<div class="quick-overview"></div>');
+						const overviewTitle = $('<h2></h2>').text(translations[currentLang].quickOverviewTitle);
+						overviewSection.append(overviewTitle);
+						
+						// Group wines by category for overview
+						const winesByCategoryOverview = {};
+						wines.forEach(function(wine) {
+							if (!winesByCategoryOverview[wine.category]) {
+								winesByCategoryOverview[wine.category] = [];
+							}
+							winesByCategoryOverview[wine.category].push(wine);
+						});
+						
+						// Display overview by category
+						categoryOrder.forEach(function(category) {
+							if (winesByCategoryOverview[category] && winesByCategoryOverview[category].length > 0) {
+								const categoryGroup = $('<div class="overview-category-group"></div>');
+								const categoryTitle = $('<div class="overview-category-title"></div>').text(translations[currentLang].categories[category]);
+								categoryGroup.append(categoryTitle);
+								
+								const overviewList = $('<div class="overview-list"></div>');
+								winesByCategoryOverview[category].forEach(function(wine) {
+									const categoryClass = wine.category.toLowerCase();
+									const price = wine.price || '';
+									const overviewItem = $(`
+										<div class="overview-item ${categoryClass}">
+											<div class="overview-item-info">
+												<div class="overview-item-name">${wine.title}</div>
+											</div>
+											<div class="overview-item-price">${price}</div>
+										</div>
+									`);
+									overviewList.append(overviewItem);
+								});
+								categoryGroup.append(overviewList);
+								overviewSection.append(categoryGroup);
+							}
+						});
+						overviewContainer.append(overviewSection);
+						
+						// Load detailed wine tiles
 						const container = $('#wines-container');
 						container.empty();
 
