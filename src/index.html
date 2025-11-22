@@ -178,6 +178,41 @@
 				margin-left: 1rem;
 				white-space: nowrap;
 			}
+			
+			/* Info notice section */
+			.info-notice {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 1.25rem;
+				background: #f0f7ff;
+				border-left: 4px solid #4a90e2;
+				border-radius: 4px;
+				margin: 2rem 0;
+			}
+			.info-notice-icon {
+				font-size: 1.5em;
+				color: #4a90e2;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+			}
+			.info-notice-text {
+				flex: 1;
+				color: #333;
+				line-height: 1.6;
+				display: flex;
+				align-items: center;
+			}
+			.info-notice-text a {
+				color: #4a90e2;
+				text-decoration: underline;
+				font-weight: 500;
+				margin-left: 0.3em;
+			}
+			.info-notice-text a:hover {
+				color: #357abd;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -195,8 +230,12 @@
 							</div>
 							<header>
 								<h1 data-translate="title">Feniks Wijn 2025</h1>
-								<p data-translate="description">Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Zwijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.</p>
+								<p data-translate="description">Ontdek onze selectie wijnen ten voordele van <a href="https://feniksgent.wordpress.com/" target="_blank">basketbalclub Feniks Zwijnaarde</a>.</p>
 							</header>
+							<div class="info-notice" data-translate="infoNotice">
+								<span class="info-notice-icon"><i class="fas fa-lightbulb"></i></span>
+								<div class="info-notice-text">Neem gerust een kijkje, maar je moet bestellen via het <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank">Google formulier</a>.</div>
+							</div>
 							<div id="quick-overview-container">
 								<!-- Quick overview will be loaded here dynamically -->
 							</div>
@@ -235,7 +274,8 @@
 				const translations = {
 					nl: {
 						title: 'Feniks Wijn 2025',
-						description: 'Ontdek onze selectie wijnen ten voordele van basketbalclub Feniks Zwijnaarde. Klik op een wijn voor meer informatie of gebruik het bestelformulier om uw bestelling te plaatsen.',
+						description: 'Ontdek onze selectie wijnen ten voordele van <a href="https://feniksgent.wordpress.com/" target="_blank">basketbalclub Feniks Zwijnaarde</a>.',
+						infoNotice: '<span class="info-notice-icon"><i class="fas fa-lightbulb"></i></span><div class="info-notice-text">Neem gerust een kijkje, maar je moet bestellen via het <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank">Google formulier</a>.</div>',
 						orderFormTitle: 'Bestelformulier',
 						orderFormDescription: 'Gebruik het onderstaande formulier om uw bestelling te plaatsen:',
 						openOrderForm: 'Open Bestelformulier',
@@ -249,7 +289,8 @@
 					},
 					en: {
 						title: 'Feniks Wine 2025',
-						description: 'Discover our selection of wines for the benefit of basketball club Feniks Zwijnaarde. Click on a wine for more information or use the order form to place your order.',
+						description: 'Discover our selection of wines for the benefit of <a href="https://feniksgent.wordpress.com/" target="_blank">basketball club Feniks Zwijnaarde</a>.',
+						infoNotice: '<span class="info-notice-icon"><i class="fas fa-lightbulb"></i></span><div class="info-notice-text">Take a look around, but you need to order via the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank">Google form</a>.</div>',
 						orderFormTitle: 'Order Form',
 						orderFormDescription: 'Use the form below to place your order:',
 						openOrderForm: 'Open Order Form',
@@ -263,7 +304,8 @@
 					},
 					fr: {
 						title: 'Feniks Vin 2025',
-						description: 'Découvrez notre sélection de vins au profit du club de basket Feniks Zwijnaarde. Cliquez sur un vin pour plus d\'informations ou utilisez le formulaire de commande pour passer votre commande.',
+						description: 'Découvrez notre sélection de vins au profit du <a href="https://feniksgent.wordpress.com/" target="_blank">club de basket Feniks Zwijnaarde</a>.',
+						infoNotice: '<span class="info-notice-icon"><i class="fas fa-lightbulb"></i></span><div class="info-notice-text">Jetez un coup d\'œil, mais vous devez commander via le <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform" target="_blank">formulaire Google</a>.</div>',
 						orderFormTitle: 'Formulaire de commande',
 						orderFormDescription: 'Utilisez le formulaire ci-dessous pour passer votre commande:',
 						openOrderForm: 'Ouvrir le formulaire de commande',
@@ -289,7 +331,12 @@
 					$('[data-translate]').each(function() {
 						const key = $(this).data('translate');
 						if (t[key]) {
-							$(this).text(t[key]);
+							// Use html() for description and infoNotice to allow links, text() for others
+							if (key === 'description' || key === 'infoNotice') {
+								$(this).html(t[key]);
+							} else {
+								$(this).text(t[key]);
+							}
 						}
 					});
 					// Update active language button
