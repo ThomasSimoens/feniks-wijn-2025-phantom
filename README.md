@@ -2,7 +2,7 @@
 
 ## About
 
-This is a basic static website to list some of the offered wines for a temporary sale for the profits of a basketball club called Feniks Wijnaarde.
+This is a basic static website to list some of the offered wines for a temporary sale for the profits of a basketball club called Feniks Zwijnaarde.
 
 It should only list the availble wines (which can be found at `src/feniks-data`) with some context.
 No need for any "buy" or "shopping cart" functionality, because Feniks chose to have a Google Sheet form: `https://docs.google.com/forms/d/e/1FAIpQLSdSG1oNepLKLmEqgqf29_z72hex94BARXuJfIsfdfyPc67l3A/viewform`.
