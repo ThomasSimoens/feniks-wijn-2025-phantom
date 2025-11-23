@@ -600,16 +600,23 @@
                   <div class="wine-detail-subsection">
                     <div class="wine-detail-subsection-title">Description</div>
                     <div class="wine-detail-subsection-content">${
-                      wine.desc || ""
+                      wine.translatables?.desc?.[currentLang] || wine.desc || ""
                     }</div>
                   </div>
                 `;
 
-                if (wine.flavour) {
+                if (
+                  wine.translatables?.flavour?.[currentLang] ||
+                  wine.flavour
+                ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
                       <div class="wine-detail-subsection-title">Flavour Profile</div>
-                      <div class="wine-detail-subsection-content">${wine.flavour}</div>
+                      <div class="wine-detail-subsection-content">${
+                        wine.translatables?.flavour?.[currentLang] ||
+                        wine.flavour ||
+                        ""
+                      }</div>
                     </div>
                   `;
                 }
@@ -623,11 +630,18 @@
                   `;
                 }
 
-                if (wine.pair_with) {
+                if (
+                  wine.translatables?.pair_with?.[currentLang] ||
+                  wine.pair_with
+                ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
                       <div class="wine-detail-subsection-title">Pairing Suggestions</div>
-                      <div class="wine-detail-subsection-content">${wine.pair_with}</div>
+                      <div class="wine-detail-subsection-content">${
+                        wine.translatables?.pair_with?.[currentLang] ||
+                        wine.pair_with ||
+                        ""
+                      }</div>
                     </div>
                   `;
                 }
@@ -650,11 +664,18 @@
                   `;
                 }
 
-                if (wine.specials) {
+                if (
+                  wine.translatables?.specials?.[currentLang] ||
+                  wine.specials
+                ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
                       <div class="wine-detail-subsection-title">Special Notes</div>
-                      <div class="wine-detail-subsection-content">${wine.specials}</div>
+                      <div class="wine-detail-subsection-content">${
+                        wine.translatables?.specials?.[currentLang] ||
+                        wine.specials ||
+                        ""
+                      }</div>
                     </div>
                   `;
                 }
@@ -676,7 +697,9 @@
                       <div class="content">
                         <p><strong>${
                           translations[currentLang].categories[wine.category]
-                        }</strong><br />${wine.desc}</p>
+                        }</strong><br />${
+                  wine.translatables?.desc?.[currentLang] || wine.desc || ""
+                }</p>
                       </div>
                     </a>
                   </article>
