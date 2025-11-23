@@ -44,12 +44,22 @@
         border-radius: 3px;
       }
       .language-switcher button:hover {
-        background: #f0f0f0;
+        color: #7ecaf6 !important;
+        box-shadow: inset 0 0 0 2px #7ecaf6;
       }
       .language-switcher button.active {
         background: #333;
         color: #fff;
         border-color: #333;
+      }
+
+      /* Override primary button colors for Google form */
+      .button.primary:hover {
+        background-color: #7ecaf6 !important;
+      }
+
+      .button.primary:active {
+        background-color: #5eb3e6 !important;
       }
 
       /* Category sections */
