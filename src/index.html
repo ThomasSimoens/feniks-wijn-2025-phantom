@@ -798,6 +798,14 @@
           detailContainer.html(detailHtml);
           detailContainer.addClass("active");
           detailContainer.data("current-wine", wineId);
+
+          // Scroll to the detail container
+          $("html, body").animate(
+            {
+              scrollTop: detailContainer.offset().top - 100,
+            },
+            600
+          );
         }
       }
 
