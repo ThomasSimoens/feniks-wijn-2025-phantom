@@ -257,7 +257,6 @@
 
       /* Wine detail expandable section */
       .wine-detail-container {
-        grid-column: 1 / -1;
         background: #f8f8f8;
         padding: 0;
         border-radius: 4px;
@@ -675,13 +674,14 @@
                 tilesSection.append(wineElement);
               });
 
-              // Add a single detail container for this category
+              categorySection.append(tilesSection);
+
+              // Add a single detail container for this category (outside the tiles grid)
               const detailContainer = $(
                 `<div class="wine-detail-container" data-category="${category}"></div>`
               );
-              tilesSection.append(detailContainer);
+              categorySection.append(detailContainer);
 
-              categorySection.append(tilesSection);
               container.append(categorySection);
             }
           });
