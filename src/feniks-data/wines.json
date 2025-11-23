@@ -11,9 +11,9 @@
       "image_local": "feniks-data/images/wine_1_prosecco_doc_treviso_frizzante_spago_3206.jpg",
       "translatables": {
         "desc": {
-          "nl": "Spumante brut",
-          "en": "Spumante brut",
-          "fr": "Spumante brut"
+          "nl": "Een frisse, lichte mousserende wijn met zachte bubbels en schone afdronk.",
+          "en": "A fresh, light sparkling wine with soft bubbles and a clean finish.",
+          "fr": "Un vin pétillant frais et léger avec des bulles douces et une finale nette."
         },
         "flavour": {
           "nl": "De Prosecco Frizzante heeft een zachtere bruis dan een volle mousserende wijn (spumante-stijl), waardoor het een lichtere, gemakkelijk te drinken stijl is. Goed uitgebalanceerd & fruitig, het biedt een heerlijk boeket van groene appel & witte bloesems dat plaats maakt voor een knapperig, schoon mondgevoel.",
@@ -37,9 +37,9 @@
       "image_local": "feniks-data/images/wine_2_prosecco_doc_treviso_spumante_brut_ros_millesimato_5206.jpg",
       "translatables": {
         "desc": {
-          "nl": "Spumante brut rosé",
-          "en": "Spumante brut rosé",
-          "fr": "Spumante brut rosé"
+          "nl": "Een elegante rosé mousserende wijn met fruitige aroma's en fijne bubbels.",
+          "en": "An elegant rosé sparkling wine with fruity aromas and fine bubbles.",
+          "fr": "Un élégant vin pétillant rosé avec des arômes fruités et des bulles fines."
         }
       }
     },
@@ -52,9 +52,9 @@
       "image_local": "feniks-data/images/wine_3_saporito_chardonnay__garganega_veneto_igt_4722.jpg",
       "translatables": {
         "desc": {
-          "nl": "Chardonnay Garganega Veneto",
-          "en": "Chardonnay Garganega Veneto",
-          "fr": "Chardonnay Garganega Veneto"
+          "nl": "Een harmonische blend van Chardonnay en Garganega uit Venetië met fruitige elegantie.",
+          "en": "A harmonious blend of Chardonnay and Garganega from Veneto with fruity elegance.",
+          "fr": "Un assemblage harmonieux de Chardonnay et Garganega de Vénétie avec élégance fruitée."
         },
         "flavour": {
           "nl": "Met zijn soepele & sappige karakter is dit een ideale borrel- & terraswijn. De veelzijdige Chardonnay zorgt voor een mooie fruitige basis & de nodige structuur. De Garganega zorgt voor de soepele & ronde tonen. Licht, verfrissend & verrassend lekker.",
@@ -78,9 +78,9 @@
       "image_local": "feniks-data/images/wine_3_saporito_chardonnay__garganega_veneto_igt_4722.jpg",
       "translatables": {
         "desc": {
-          "nl": "Pinot Grigio from Venezia (Savian)",
-          "en": "Pinot Grigio from Venezia (Savian)",
-          "fr": "Pinot Grigio from Venezia (Savian)"
+          "nl": "Een klassieke Pinot Grigio uit de Venezia streek met verfijnde, lichte smaak.",
+          "en": "A classic Pinot Grigio from the Venezia region with refined, light taste.",
+          "fr": "Un Pinot Grigio classique de la région de Venezia avec un goût raffiné et léger."
         }
       }
     },
@@ -144,9 +144,9 @@
       "image_local": "feniks-data/images/wine_6_saporito_merlot__raboso_veneto_igt_4706.jpg",
       "translatables": {
         "desc": {
-          "nl": "Merlot | Raboso Veneto",
-          "en": "Merlot | Raboso Veneto",
-          "fr": "Merlot | Raboso Veneto"
+          "nl": "Een zachte rode wijn met bosvruchten en volle smaak uit de Veneto.",
+          "en": "A soft red wine with forest berries and full flavor from Veneto.",
+          "fr": "Un vin rouge doux avec des fruits des bois et une saveur complète de Vénétie."
         },
         "flavour": {
           "nl": "Een diepe, paarsrode wijn die wordt gekenmerkt door aroma's van rijpe bosvruchten zoals bosbessen, kersen & braambessen. Het is een gulle rode wijn met een aangename finish. Een combinatie van Merlot & Raboso uit Veneto. Die laatste wordt vaak gebruikt in Prosecco & geeft vooral veel indrukken van fruit af aan de wijn. Veneto kent een zacht klimaat met natte winters. De druiven krijgen er de tijd om zich langzaam te ontwikkelen. Dat uit zich in wijnen met een zacht & soepel karakter.",
@@ -168,9 +168,9 @@
       "image_local": "feniks-data/images/wine_7_barbera_dasti_san_nicolao_docg_vite_colte_4320-150x150.jpg",
       "translatables": {
         "desc": {
-          "nl": "Barbera d'Asti DOCG",
-          "en": "Barbera d'Asti DOCG",
-          "fr": "Barbera d'Asti DOCG"
+          "nl": "Een volle, gerijpte rode wijn met veel karakter en zachte tannines.",
+          "en": "A full, aged red wine with plenty of character and soft tannins.",
+          "fr": "Un vin rouge complet et vieilli avec beaucoup de caractère et des tanins souples."
         },
         "flavour": {
           "nl": "Vol en soepel met een goede structuur, levendige zuren en zachte tannines die samenkomen in een lange, fruitige afdronk. Rijk en complex met aroma's van rijp zwart fruit zoals kersen, bramen en pruimen, aangevuld met lichte kruiden en een vleugje vanille.",
@@ -199,9 +199,9 @@
       "image_local": "feniks-data/images/wine_8_oltrep_pavese_bonarda_mazzolino_-_doc_1534.jpg",
       "translatables": {
         "desc": {
-          "nl": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC",
-          "en": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC",
-          "fr": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC"
+          "nl": "Een elegante Bonarda uit Lombardije met fruitige intensiteit en verfijnde structuur.",
+          "en": "An elegant Bonarda from Lombardy with fruity intensity and refined structure.",
+          "fr": "Un Bonarda élégant de Lombardie avec une intensité fruitée et une structure raffinée."
         }
       }
     },
@@ -217,9 +217,9 @@
       "image_local": "feniks-data/images/wine_9_langhe_nebbiolo_sogni_al_campo_doc_vite_colte_2123_2-150x150.jpg",
       "translatables": {
         "desc": {
-          "nl": "Een verfijnde en evenwichtige Nebbiolo, met een karaktervolle smaak en zachte tannines - de ideale wijn voor liefhebbers van elegante roden",
-          "en": "A refined and balanced Nebbiolo, with a characteristic taste and soft tannins - the ideal wine for lovers of elegant reds",
-          "fr": "Un Nebbiolo affiné et équilibré, avec un goût caractéristique et des tanins souples - le vin idéal pour les amateurs de rouges élégants"
+          "nl": "Een verfijnde en evenwichtige Nebbiolo, met een karaktervolle smaak en zachte tannines",
+          "en": "A refined and balanced Nebbiolo, with a characteristic taste and soft tannins",
+          "fr": "Un Nebbiolo affiné et équilibré, avec un goût caractéristique et des tanins souples"
         },
         "flavour": {
           "nl": "Elegant en goed gestructureerd, met levendige zuren en zachte tannines. De smaak is fruitig met een delicatekruidigheid, die overgaat in een verfijnde, lange afdronk.Aangename geur van rijpe kersen, viooltjes en rozen, met subtiele tonen van kruiden, specerijen en een lichte aardse ondertoon",
