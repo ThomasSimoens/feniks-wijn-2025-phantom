@@ -653,10 +653,13 @@
                 const wineId = wine.form_number || index;
                 window.wineDetails[category][wineId] = detailHtml;
 
+                // Use local image if available, otherwise use remote URL
+                const imageUrl = wine.image_local || wine.image;
+
                 const wineElement = `
                   <article class="${style}" data-wine-id="${wineId}" data-category="${category}">
                     <span class="image">
-                      <img src="${wine.image}" alt="${wine.title}" />
+                      <img src="${imageUrl}" alt="${wine.title}" />
                     </span>
                     ${priceBadge}
                     <a href="#" class="wine-link">

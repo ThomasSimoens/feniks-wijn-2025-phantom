@@ -10,7 +10,8 @@
       "flavour": "De Prosecco Frizzante heeft een zachtere bruis dan een volle mousserende wijn (spumante-stijl), waardoor het een lichtere, gemakkelijk te drinken stijl is. Goed uitgebalanceerd & fruitig, het biedt een heerlijk boeket van groene appel & witte bloesems dat plaats maakt voor een knapperig, schoon mondgevoel.",
       "grapes": "100% Glera (Prosecco)",
       "pair_with": "Door zijn zachtheid is het een heerlijke traktatie als aperitief. Het kan ook tijdens de maaltijd worden geserveerd als aanvulling op een verscheidenheid aan gerechten & het vertegenwoordigt met trots de perfecte dagelijkse bubbels.",
-      "price": "€11"
+      "price": "€11",
+      "image_local": "feniks-data/images/wine_1_prosecco_doc_treviso_frizzante_spago_3206.jpg"
     },
     {
       "form_number": "2",
@@ -19,7 +20,8 @@
       "url": "https://vinifratelliranft.be/shop/bubbels_4/prosecco-doc-treviso-spumante-brut-rose-millesimato/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/11/prosecco_doc_treviso_spumante_brut_ros_millesimato_5206.png",
       "desc": "Spumante brut rosé",
-      "price": "€11"
+      "price": "€11",
+      "image_local": "feniks-data/images/wine_2_prosecco_doc_treviso_spumante_brut_ros_millesimato_5206.jpg"
     },
     {
       "title": "'Saporito' Chardonnay | Garganega Veneto IGT",
@@ -29,7 +31,8 @@
       "desc": "Chardonnay Garganega Veneto",
       "flavour": "Met zijn soepele & sappige karakter is dit een ideale borrel- & terraswijn. De veelzijdige Chardonnay zorgt voor een mooie fruitige basis & de nodige structuur. De Garganega zorgt voor de soepele & ronde tonen. Licht, verfrissend & verrassend lekker.",
       "pair_with": "Groente, Schaal- & schelpdieren, Vis",
-      "price": "€7.50"
+      "price": "€7.50",
+      "image_local": "feniks-data/images/wine_3_saporito_chardonnay__garganega_veneto_igt_4722.jpg"
     },
     {
       "form_number": "3",
@@ -38,7 +41,8 @@
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/veneto_46/venezia-doc_86/pinot-grigio-venezia-doc-savian/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/pinot_grigio_venezia_doc_savian_3341.png",
       "desc": "Pinot Grigio from Venezia (Savian)",
-      "price": "€10"
+      "price": "€10",
+      "image_local": "feniks-data/images/wine_3_saporito_chardonnay__garganega_veneto_igt_4722.jpg"
     },
     {
       "form_number": "4",
@@ -51,7 +55,8 @@
       "serve_temperature": "8-10 °C",
       "pair_with": "Uitstekend bij geitenkaas, zeevruchten, asperges, frisse salades en vegetarische gerechten",
       "flavour": "Aromatisch en levendig met tonen van citrus, buxus, witte perzik, kruisbes en een hint van salie. Fris en mineraal met knapperige zuren, een mooie balans en een lange, droge afdronk",
-      "price": "€11"
+      "price": "€11",
+      "image_local": "feniks-data/images/wine_4_piemonte_sauvignon_tra_donne_sole_doc_075_lt__vite_colte_3312.jpg"
     },
     {
       "form_number": "5",
@@ -62,7 +67,8 @@
       "desc": "Strogele kleur. Karakteristiek, fijn & intens in de neus, in de afdronk droog & harmonieus.",
       "grapes": "100% Erbaluce",
       "pair_with": "Ideale begeleider als aperitief, gaat ook goed samen met een antipasti misto (bordje koude vleeswaren & kaas), bij een primi gaan we de combinatie aan met iets van vis of een frisse salade met geitenkaas of een caprese (salade van tomaat & mozzarella).",
-      "price": "€14"
+      "price": "€14",
+      "image_local": "feniks-data/images/wine_5_coste_della_sesia_bianco_la_via_doc_5743.jpg"
     },
     {
       "form_number": "6",
@@ -72,7 +78,8 @@
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/09/saporito_merlot__raboso_veneto_igt_4706.jpg",
       "desc": "Merlot | Raboso Veneto",
       "flavour": "Een diepe, paarsrode wijn die wordt gekenmerkt door aroma's van rijpe bosvruchten zoals bosbessen, kersen & braambessen. Het is een gulle rode wijn met een aangename finish. Een combinatie van Merlot & Raboso uit Veneto. Die laatste wordt vaak gebruikt in Prosecco & geeft vooral veel indrukken van fruit af aan de wijn. Veneto kent een zacht klimaat met natte winters. De druiven krijgen er de tijd om zich langzaam te ontwikkelen. Dat uit zich in wijnen met een zacht & soepel karakter.",
-      "price": "€7.50"
+      "price": "€7.50",
+      "image_local": "feniks-data/images/wine_6_saporito_merlot__raboso_veneto_igt_4706.jpg"
     },
     {
       "form_number": "7",
@@ -87,7 +94,8 @@
       "serve_temperature": "16-18 °C",
       "pair_with": "Ideaal bij gegrild vlees, pastagerechten met rijke sauzen, charcuterie, pizza of zachte kazen",
       "aclcohol_level": "ca. 14%",
-      "price": "€11"
+      "price": "€11",
+      "image_local": "feniks-data/images/wine_7_barbera_dasti_san_nicolao_docg_vite_colte_4320-150x150.jpg"
     },
     {
       "form_number": "8",
@@ -96,7 +104,8 @@
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/lombardije_68/oltrep-pavese-doc_69/oltrepo-pavese-bonarda-mazzolino-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/10/oltrep_pavese_bonarda_mazzolino_-_doc_1534.jpg",
       "desc": "Oltrepò Pavese Bonarda 'Mazzolino' — DOC",
-      "price": "€14"
+      "price": "€14",
+      "image_local": "feniks-data/images/wine_8_oltrep_pavese_bonarda_mazzolino_-_doc_1534.jpg"
     },
     {
       "form_number": "9",
@@ -105,12 +114,13 @@
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/piemonte_13/langhe_18/langhe-nebbiolo-sogni-al-campo-doc/",
       "image": "https://vinifratelliranft.be/wp-content/uploads/2025/05/langhe_nebbiolo_sogni_al_campo_doc_vite_colte_2123_2-150x150.jpg",
       "desc": "Een verfijnde en evenwichtige Nebbiolo, met een karaktervolle smaak en zachte tannines - de ideale wijn voor liefhebbers van elegante roden",
-      "grapes": "100% Nebbiolo",  
+      "grapes": "100% Nebbiolo",
       "flavour": "Elegant en goed gestructureerd, met levendige zuren en zachte tannines. De smaak is fruitig met een delicatekruidigheid, die overgaat in een verfijnde, lange afdronk.Aangename geur van rijpe kersen, viooltjes en rozen, met subtiele tonen van kruiden, specerijen en een lichte aardse ondertoon",
       "pair_with": "Perfect in combinatie met gegrild vlees, pasta met rijke sauzen, risotto, en zachte kazen zoals Brie of Camembert",
       "aclcohol_level": "ca. 14%",
       "specials": "De naam “Sogni al Campo” (dromen in het veld) weerspiegelt de dromen van de wijnmaker over de perfectie van Nebbiolo. Deze wijn biedt de klassieke Nebbiolo-smaak met een zachte, toegankelijke textuur, ideaal voor zowel nieuwe als ervaren wijnliefhebbers",
-      "price": "€17"
+      "price": "€17",
+      "image_local": "feniks-data/images/wine_9_langhe_nebbiolo_sogni_al_campo_doc_vite_colte_2123_2-150x150.jpg"
     }
   ]
 }
