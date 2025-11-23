@@ -423,6 +423,15 @@
             White: "Witte Wijn",
             Red: "Rode Wijn",
           },
+          wineDetailLabels: {
+            Description: "Beschrijving",
+            "Flavour Profile": "Smaakprofiel",
+            Grapes: "Druiven",
+            "Pairing Suggestions": "Combinatiesuggetsies",
+            "Serve Temperature": "Serveerttemperatuur",
+            "Alcohol Level": "Alcoholpercentage",
+            "Special Notes": "Bijzonderheden",
+          },
           error: "Er is een fout opgetreden bij het laden van de wijnen.",
         },
         en: {
@@ -439,6 +448,15 @@
             Bubbles: "Bubbles",
             White: "White Wine",
             Red: "Red Wine",
+          },
+          wineDetailLabels: {
+            Description: "Description",
+            "Flavour Profile": "Flavour Profile",
+            Grapes: "Grapes",
+            "Pairing Suggestions": "Pairing Suggestions",
+            "Serve Temperature": "Serve Temperature",
+            "Alcohol Level": "Alcohol Level",
+            "Special Notes": "Special Notes",
           },
           error: "An error occurred while loading the wines.",
         },
@@ -457,6 +475,15 @@
             Bubbles: "Bulles",
             White: "Vin blanc",
             Red: "Vin rouge",
+          },
+          wineDetailLabels: {
+            Description: "Description",
+            "Flavour Profile": "Profil de saveur",
+            Grapes: "Raisins",
+            "Pairing Suggestions": "Suggestions d'accords",
+            "Serve Temperature": "Température de service",
+            "Alcohol Level": "Degré d'alcool",
+            "Special Notes": "Remarques spéciales",
           },
           error: "Une erreur s'est produite lors du chargement des vins.",
         },
@@ -598,7 +625,9 @@
                 // Build detail sections HTML
                 let detailHtml = `
                   <div class="wine-detail-subsection">
-                    <div class="wine-detail-subsection-title">Description</div>
+                    <div class="wine-detail-subsection-title">${
+                      translations[currentLang].wineDetailLabels.Description
+                    }</div>
                     <div class="wine-detail-subsection-content">${
                       wine.translatables?.desc?.[currentLang] || wine.desc || ""
                     }</div>
@@ -611,7 +640,11 @@
                 ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Flavour Profile</div>
+                      <div class="wine-detail-subsection-title">${
+                        translations[currentLang].wineDetailLabels[
+                          "Flavour Profile"
+                        ]
+                      }</div>
                       <div class="wine-detail-subsection-content">${
                         wine.translatables?.flavour?.[currentLang] ||
                         wine.flavour ||
@@ -624,7 +657,7 @@
                 if (wine.grapes) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Grapes</div>
+                      <div class="wine-detail-subsection-title">${translations[currentLang].wineDetailLabels.Grapes}</div>
                       <div class="wine-detail-subsection-content">${wine.grapes}</div>
                     </div>
                   `;
@@ -636,7 +669,11 @@
                 ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Pairing Suggestions</div>
+                      <div class="wine-detail-subsection-title">${
+                        translations[currentLang].wineDetailLabels[
+                          "Pairing Suggestions"
+                        ]
+                      }</div>
                       <div class="wine-detail-subsection-content">${
                         wine.translatables?.pair_with?.[currentLang] ||
                         wine.pair_with ||
@@ -649,7 +686,7 @@
                 if (wine.serve_temperature) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Serve Temperature</div>
+                      <div class="wine-detail-subsection-title">${translations[currentLang].wineDetailLabels["Serve Temperature"]}</div>
                       <div class="wine-detail-subsection-content">${wine.serve_temperature}</div>
                     </div>
                   `;
@@ -658,7 +695,7 @@
                 if (wine.aclcohol_level) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Alcohol Level</div>
+                      <div class="wine-detail-subsection-title">${translations[currentLang].wineDetailLabels["Alcohol Level"]}</div>
                       <div class="wine-detail-subsection-content">${wine.aclcohol_level}</div>
                     </div>
                   `;
@@ -670,7 +707,11 @@
                 ) {
                   detailHtml += `
                     <div class="wine-detail-subsection">
-                      <div class="wine-detail-subsection-title">Special Notes</div>
+                      <div class="wine-detail-subsection-title">${
+                        translations[currentLang].wineDetailLabels[
+                          "Special Notes"
+                        ]
+                      }</div>
                       <div class="wine-detail-subsection-content">${
                         wine.translatables?.specials?.[currentLang] ||
                         wine.specials ||
