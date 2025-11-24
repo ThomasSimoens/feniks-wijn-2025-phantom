@@ -265,6 +265,35 @@
         color: #357abd;
       }
 
+      /* First-time tooltip */
+      .first-visit-tooltip {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(51, 51, 51, 0.95);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.1em;
+        z-index: 100;
+        pointer-events: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        animation: tooltipPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes tooltipPulse {
+        0%, 100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.85;
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+      }
+
       /* Wine detail expandable section */
       .wine-detail-container {
         background: #f8f8f8;
@@ -418,6 +447,7 @@
             "Gebruik het onderstaande formulier om uw bestelling te plaatsen:",
           openOrderForm: "Open Bestelformulier",
           quickOverviewTitle: "Overzicht",
+          clickMeTooltip: "Klik op mij",
           categories: {
             Bubbles: "Bubbels",
             White: "Witte Wijn",
@@ -444,6 +474,7 @@
           orderFormDescription: "Use the form below to place your order:",
           openOrderForm: "Open Order Form",
           quickOverviewTitle: "Overview",
+          clickMeTooltip: "Click me",
           categories: {
             Bubbles: "Bubbles",
             White: "White Wine",
@@ -471,6 +502,7 @@
             "Utilisez le formulaire ci-dessous pour passer votre commande:",
           openOrderForm: "Ouvrir le formulaire de commande",
           quickOverviewTitle: "Aperçu",
+          clickMeTooltip: "Cliquez-moi",
           categories: {
             Bubbles: "Bulles",
             White: "Vin blanc",
@@ -762,6 +794,9 @@
 
           // Attach click handlers
           attachWineClickHandlers();
+          
+          // Show first-visit tooltip if not shown before
+          showFirstVisitTooltip();
         }).fail(function () {
           $("#wines-container").html(
             "<p>" + translations[currentLang].error + "</p>"
@@ -817,7 +852,29 @@
           e.stopPropagation();
           const wineId = $(this).closest("article").data("wine-id");
           toggleWineDetail(wineId);
+          
+          // Remove tooltip and mark as visited when user clicks any wine
+          $(".first-visit-tooltip").remove();
+          localStorage.setItem("feniks-wijn-clicked", "true");
         });
+      }
+      
+      // Show tooltip on first wine tile for first-time visitors
+      function showFirstVisitTooltip() {
+        // Check if user has clicked a wine before
+        const hasClickedWine = localStorage.getItem("feniks-wijn-clicked");
+        
+        if (!hasClickedWine) {
+          // Find the first wine article
+          const firstWine = $(".tiles article").first();
+          
+          if (firstWine.length > 0) {
+            // Create and append tooltip
+            const tooltip = $('<div class="first-visit-tooltip"></div>');
+            tooltip.text(translations[currentLang].clickMeTooltip);
+            firstWine.append(tooltip);
+          }
+        }
       }
 
       // Language switcher
