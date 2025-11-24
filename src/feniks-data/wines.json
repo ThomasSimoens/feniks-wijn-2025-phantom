@@ -44,6 +44,7 @@
       }
     },
     {
+      "form_number": "3",
       "title": "'Saporito' Chardonnay | Garganega Veneto IGT",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/veneto_46/saporito-chardonnay-garganega-veneto-igt/",
@@ -69,7 +70,7 @@
       }
     },
     {
-      "form_number": "3",
+      "form_number": "4",
       "title": "Pinot Grigio Venezia DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/veneto_46/venezia-doc_86/pinot-grigio-venezia-doc-savian/",
@@ -85,7 +86,7 @@
       }
     },
     {
-      "form_number": "4",
+      "form_number": "5",
       "title": "Piemonte sauvignon 'Tra Donne Sole' DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/rose-wijn_31/piemonte_32/piemonte-sauvignon-tra-donne-sole-doc/",
@@ -113,7 +114,7 @@
       }
     },
     {
-      "form_number": "5",
+      "form_number": "6",
       "title": " Coste Della Sesia Bianco 'La Via' DOC",
       "category": "White",
       "url": "https://vinifratelliranft.be/shop/witte-wijn_9/piemonte_10/coste-della-sesia-doc_30/coste-della-sesia-bianco-la-via-doc/",
@@ -135,7 +136,7 @@
       }
     },
     {
-      "form_number": "6",
+      "form_number": "7",
       "title": "'Saporito' Merlot | Raboso Veneto IGT",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/veneto_50/saporito-merlot-raboso-veneto-igt/",
@@ -156,7 +157,7 @@
       }
     },
     {
-      "form_number": "7",
+      "form_number": "8",
       "title": "Barbera D'Asti 'San Nicolao' DOCG",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/piemonte_13/asti-docg_54/barbera-dasti-san-nicolao-docg/",
@@ -190,7 +191,7 @@
       }
     },
     {
-      "form_number": "8",
+      "form_number": "9",
       "title": "Bonarda dell'Oltrepò Pavese DOC",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/lombardije_68/oltrep-pavese-doc_69/oltrepo-pavese-bonarda-mazzolino-doc/",
@@ -206,7 +207,7 @@
       }
     },
     {
-      "form_number": "9",
+      "form_number": "10",
       "title": "Langhe Nebbiolo \"Sogni al Campo\" DOC",
       "category": "Red",
       "url": "https://vinifratelliranft.be/shop/rode-wijn_12/piemonte_13/langhe_18/langhe-nebbiolo-sogni-al-campo-doc/",
